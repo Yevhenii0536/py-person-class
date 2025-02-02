@@ -2,7 +2,7 @@ from typing import Dict, Optional, List
 
 
 class Person:
-    people: Dict[str, "Person"] = dict()
+    people: Dict[str, "Person"] = {}
 
     def __init__(self, name: str, age: int) -> None:
         self.name = name
@@ -15,8 +15,6 @@ class Person:
 
 
 def create_person_list(people: List[dict]) -> List[Person]:
-    Person.people.clear()
-
     persons = [Person(name=p.get("name"), age=p.get("age")) for p in people]
 
     for person in people:

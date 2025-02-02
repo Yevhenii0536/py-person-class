@@ -9,9 +9,9 @@ class Person:
         self.age = age
         Person.people[name] = self
 
-    @staticmethod
-    def find_person(name: Optional[str]) -> Optional["Person"]:
-        return Person.people.get(name) if isinstance(name, str) else None
+    @classmethod
+    def find_person(cls, name: Optional[str]) -> Optional["Person"]:
+        return cls.people.get(name) if isinstance(name, str) else None
 
 
 def create_person_list(people: List[dict]) -> List[Person]:
